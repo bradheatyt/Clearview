@@ -20,43 +20,93 @@ h2 {
 }
 
 /* --- HERO HEADER STYLES --- */
-.hero-header {
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Adjusts minimum height */
+    max-height: 80vh; /* Prevents full viewport occupation */
+    width: 100%;
+    background: url('images/hero-panorama.JPG') center center / cover no-repeat, #fff;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#header .inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 60vh;      /* Adjusts minimum height */
-    max-height: 80vh;      /* Prevents full viewport occupation */
+    text-align: center;
     width: 100%;
-    background: url('../images/hero-panorama.JPG') center center / cover no-repeat;
-    color: #fff;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    position: relative;
-    overflow: hidden;      /* Keeps content inside */
 }
 
-.hero-header h1,
-.hero-header h2 {
+#header .logo img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+#header h1,
+#header h1 strong {
     color: #fff;
+    font-size: 3rem;
+    letter-spacing: 2px;
     margin-bottom: 0.5em;
 }
 
-@media (max-width: 768px) {
-    .hero-header {
+#header p {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5em;
+}
+
+#header .actions.special .button {
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 0.75em 2em;
+    border-radius: 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+
+#header .actions.special .button:hover {
+    background: #fff;
+    color: #4686a0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    #header {
         min-height: 40vh;
         max-height: none;
         padding: 2em 1em;
     }
-}
-    h1 {
-        font-size: 1.1em !important;
+    #header h1 {
+        font-size: 2rem;
     }
-    h2 {
-        font-size: 1em !important;
+    #header p {
+        font-size: 1.1rem;
+    }
+    #header .logo img {
+        max-width: 180px;
     }
 }
 
-/* (Keep the rest of your CSS below unchanged) */
+/* Ensure no extra space on sides */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
 
