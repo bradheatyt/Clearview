@@ -25,12 +25,14 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 60vh;
+    min-height: 60vh;      /* Adjusts minimum height */
+    max-height: 80vh;      /* Prevents full viewport occupation */
     width: 100%;
     background: url('../images/hero-panorama.JPG') center center / cover no-repeat;
     color: #fff;
     text-shadow: 0 2px 12px rgba(0,0,0,0.3);
     position: relative;
+    overflow: hidden;      /* Keeps content inside */
 }
 
 .hero-header h1,
@@ -42,8 +44,10 @@ h2 {
 @media (max-width: 768px) {
     .hero-header {
         min-height: 40vh;
+        max-height: none;
         padding: 2em 1em;
     }
+}
     h1 {
         font-size: 1.1em !important;
     }
