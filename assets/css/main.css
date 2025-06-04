@@ -9,29 +9,33 @@
 
 /* --- HERO HEADER CUSTOM --- */
 #header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    width: 100%;
-    background: #4686a0; /* fallback */
-    background-image: url('images/hero-panorama.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: left center;
-    color: #fff;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    animation: pano-scan 40s linear infinite alternate;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-@keyframes pano-scan {
-    from { background-position: left center; }
-    to   { background-position: right center; }
+#header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%; /* extend for panning room */
+  height: 100%;
+  background: url("images/hero-panorama.jpg") repeat-x center center;
+  background-size: cover;
+  animation: panoPan 60s linear infinite;
+  z-index: -1;
+  opacity: 1;
+}
+
+@keyframes panoPan {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
 }
 
 #header .inner {
