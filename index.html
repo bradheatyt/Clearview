@@ -16,6 +16,7 @@
 
 <!-- Header -->
 <section id="header">
+  <div id="pano"></div>
   <div class="inner">
     <span class="logo">
       <img src="images/clearview-logo.png" alt="Clearview Visuals Logo" />
@@ -28,6 +29,28 @@
     </ul>
   </div>
 </section>
+
+<!-- Pannellum Assets -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    pannellum.viewer('pano', {
+      "type": "equirectangular",
+      "panorama": "images/hero-panorama.jpg",
+      "autoLoad": true,
+      "autoRotate": -2,
+      "showZoomCtrl": false,
+      "showFullscreenCtrl": false,
+      "showControls": false,
+      "yaw": 0,
+      "pitch": 0,
+      "hfov": 110
+    });
+  });
+</script>
+
 
 		<!-- One -->
 		<section id="one" class="main style1">
