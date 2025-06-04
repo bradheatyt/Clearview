@@ -36,6 +36,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    var hfov = window.innerWidth < 768 ? 70 : 110;
     pannellum.viewer('pano', {
       "type": "equirectangular",
       "panorama": "images/hero-panorama.jpg",
@@ -46,8 +47,7 @@
       "showControls": false,
       "yaw": 0,
       "pitch": 0,
-      "hfov": 110
-	hfov: window.innerWidth < 768 ? 70 : 110,
+      "hfov": hfov,
     });
   });
 </script>
