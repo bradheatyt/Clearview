@@ -40,13 +40,14 @@
       "type": "equirectangular",
       "panorama": "images/hero-panorama.jpg",
       "autoLoad": true,
-      "autoRotate": -2,
+      "autoRotate": -3.33,
       "showZoomCtrl": false,
       "showFullscreenCtrl": false,
       "showControls": false,
       "yaw": 0,
       "pitch": 0,
       "hfov": 110
+	hfov: window.innerWidth < 768 ? 70 : 110,
     });
   });
 </script>
